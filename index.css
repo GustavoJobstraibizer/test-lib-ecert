@@ -1,0 +1,31 @@
+.form-participant {
+  display: flex;
+  padding: 50px;
+}
+
+.form-participant label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+}
+
+.form-participant input,
+select {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  color: #2c2c2c;
+}
+
+.form-participant input:focus,
+select:focus {
+  border: 2px solid #64b5f6;
+}
+
+.btn {
+  border: none;
+}
