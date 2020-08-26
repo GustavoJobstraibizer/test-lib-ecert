@@ -3,73 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>EcertDocsLib</title>
     <link rel="stylesheet" href="ecert-docslib.css" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
   </head>
   <body>
-    <input type="file" hidden id="inputFile" />
-    <button type="button" id="btnSelecionar">Selecionar</button>
-    <button type="button" id="btnAddParticipant">Adicionar</button>
-    <button type="button" id="updateParticipant">Alterar posição</button>
-    <button type="button" id="removeParticipant">Remover participante</button>
-    <button type="button" id="showAllParticipants">Todos participantes</button>
-    <button type="button" id="removeData">Apagar dados</button>
+    <div class="container">
+      <input type="file" hidden id="inputFile" />
+      <button type="button" class="btn btn__primary" id="btnSelecionar">
+        Selecionar Documento
+      </button>
+      <button type="button" class="btn btn__primary" id="showAllParticipants">
+        Participantes
+      </button>
+      <button type="button" class="btn btn__white" id="removeData">
+        Apagar dados
+      </button>
 
-    <form class="form-participant">
-      <label for="email">
-        E-mail
-        <input type="email" name="email" id="email" />
-      </label>
+      <form class="form-participant">
+        <label for="email">
+          E-mail
+          <input type="email" name="email" id="email" />
+        </label>
 
-      <label for="document">
-        CPF
-        <input type="text" name="document" id="document" />
-      </label>
+        <label for="document">
+          CPF
+          <input type="text" name="document" id="document" />
+        </label>
 
-      <label for="name">
-        Nome
-        <input type="text" name="name" id="name" />
-      </label>
+        <label for="name">
+          Nome
+          <input type="text" name="name" id="name" />
+        </label>
 
-      <label for="role">
-        Role
-        <select name="" id="role">
-          <option value="CONTRATANTE">Contratante</option>
-          <option value="CONTRATADO">Contratado</option>
-          <option value="PARTE">Parte</option>
-          <option value="TESTEMUNHA">Testemunha</option>
-          <option value="TESTEMUNHA_CONTRATANTE">Testemunha Contratante</option>
-          <option value="TESTEMUNHA_CONTRATADO">Testemunha Contratado</option>
-        </select>
-      </label>
+        <label for="role">
+          Role
+          <select name="" id="role">
+            <option value="CONTRATANTE">Contratante</option>
+            <option value="CONTRATADO">Contratado</option>
+            <option value="PARTE">Parte</option>
+            <option value="TESTEMUNHA">Testemunha</option>
+            <option value="TESTEMUNHA_CONTRATANTE">
+              Testemunha Contratante
+            </option>
+            <option value="TESTEMUNHA_CONTRATADO">Testemunha Contratado</option>
+          </select>
+        </label>
 
-      <label for="signatureType">
-        Tipo assinatura
-        <select name="signatureType" id="signatureType">
-          <option value="1">Eletrônica</option>
-          <option value="2">Digital</option>
-        </select>
-      </label>
+        <label for="signatureType">
+          Tipo assinatura
+          <select name="signatureType" id="signatureType">
+            <option value="1">Eletrônica</option>
+            <option value="2">Digital</option>
+          </select>
+        </label>
 
-      <button type="button" class="btn btn__primary" id="btnAdicionarParticipant">Adicionar</button>
-    </form>
+        <button
+          type="button"
+          class="btn btn__primary"
+          id="btnAdicionarParticipant"
+        >
+          Adicionar
+        </button>
+      </form>
 
-    <table>
-      <thead>
-        <th>E-mail</th>
-        <th>CPF</th>
-        <th>Nome</th>
-        <th>Role</th>
-        <th>Tipo assinatura</th>
-        <th></th>
-      </thead>
+      <section class="table-content">
+        <table class="table">
+          <thead class="thead-dark">
+            <th>E-mail</th>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th>Role</th>
+            <th>Tipo assinatura</th>
+            <th>Ações</th>
+          </thead>
 
-      <tbody id="tableParticipants"></tbody>
-    </table>
+          <tbody id="tableParticipants"></tbody>
+        </table>
+      </section>
+
+      <section class="content-participants">
+        <textarea
+          disabled
+          name="participantes"
+          id="resultParticipants"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </section>
+    </div>
 
     <script src="index.js"></script>
     <script src="src/lib/ecert-docslib.js"></script>
-    <!-- <script src="src/lib/ecert-docslib.js.map"></script> -->
   </body>
 </html>
